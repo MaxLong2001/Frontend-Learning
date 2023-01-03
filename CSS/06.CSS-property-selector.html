@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS property selector</title>
+    <style>
+        /* [属性名]：选择含有指定属性的元素 */
+        p[title]{
+            color: cadetblue;
+        }
+        /* [属性名=属性值]：选择含有指定属性和属性值的元素 */
+        p[title="a"]{
+            font-size: 30px;
+        }
+        /* [属性名^=属性值]：选择以指定属性值开头的元素 */
+        /* [属性名$=属性值]：选择以指定属性值结尾的元素 */
+        /* [属性名*=属性值]：选择属性值中含有指定值的元素 */
+        p[title^="a"]{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<p title="a">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consectetur dignissimos eaque, eligendi eos eum excepturi, fugiat nesciunt nobis nostrum quaerat quasi quia rem similique, tempore totam ut velit voluptas.</p>
+<p title="ab">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolores id ipsum nesciunt non suscipit tenetur totam vel velit? Culpa delectus doloremque harum magnam minus odio quidem rem reprehenderit voluptatibus.</p>
+<p title="c">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus doloremque impedit laboriosam nesciunt perspiciatis reprehenderit sed voluptas. Accusantium error fugit odit rem vel. Dignissimos eligendi ipsa recusandae rem soluta temporibus.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias, aliquam commodi consequuntur, dolor error in ipsam ipsum labore magnam mollitia nam non, numquam pariatur quo ratione suscipit temporibus totam.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cum debitis delectus eveniet exercitationem explicabo impedit ipsam, iste maiores nobis odit placeat quasi quibusdam quo quod reiciendis repellat sunt veniam?</p>
+</body>
+</html>

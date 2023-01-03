@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS pseudo selector</title>
+    <style>
+        /*
+            伪类用于描述一个元素的特殊状态
+            :first-child    第一个子元素
+            :last-child     最后一个子元素
+            :nth-child(n)   第n个子元素
+                n: 选中所有子元素
+                2n / even: 选中所有偶数子元素
+                2n+1 / odd: 选中所有奇数子元素
+            :first-of-type  第一个同类型的子元素
+            :last-of-type   最后一个同类型的子元素
+            :nth-of-type(n) 第n个同类型的子元素
+            :not(selector)  除了selector之外的所有元素
+        */
+        ul > li:first-child{
+            color: red;
+        }
+        ul > li:nth-child(2){
+            color: blue;
+        }
+        ul > li:not(:nth-child(4)){
+            color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>first</li>
+    <li>second</li>
+    <li>third</li>
+    <li>fourth</li>
+    <li>fifth</li>
+</ul>
+</body>
+</html>

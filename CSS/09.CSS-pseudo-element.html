@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS pseudo element</title>
+    <style>
+        p{
+            font-size: 20px;
+        }
+        p::first-letter{
+            color: red;
+            font-size: 50px;
+        }
+        p::first-line{
+            background-color: pink;
+        }
+        p::selection{
+            background-color: yellow;
+        }
+        div::before{
+            content: "\"";
+            color: red;
+            font-size: 30px;
+        }
+        div::after{
+            content: "\"";
+            color: blue;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div>This is a division. Hello world!</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci beatae cumque eaque eum expedita itaque laboriosam nemo nesciunt nulla quae quasi quisquam reprehenderit, saepe sequi, temporibus vel veritatis voluptatem.</p>
+</body>
+</html>

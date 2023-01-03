@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS weight</title>
+    <style>
+        /*
+            当通过不同的选择器选中相同的元素，且为相同的样式设置不同的值时，会出现冲突。
+            应用哪个样式由选择器的权重（优先级）决定。
+
+            选择器权重：
+                1. 内联样式（行内样式）               1000    1,0,0,0
+                2. ID选择器                         100     0,1,0,0
+                3. 类选择器、属性选择器、伪类选择器     10      0,0,1,0
+                4. 标签选择器、伪元素选择器            1       0,0,0,1
+                5. 通配符选择器                      0       0,0,0,0
+                6. 继承的样式                        没有优先级
+                7. 浏览器默认样式
+
+            选择器权重的计算：
+                1. 将选择器中的每个选择器分解为单个选择器
+                2. 将每个选择器的权重相加
+                3. 权重相同的选择器，后面的选择器会覆盖前面的选择器
+                4. 分组选择器的权重等于其中最大的选择器的权重
+
+            可以在某一个样式后面添加!important来提高权重，但是不推荐使用。
+        */
+        div{
+            background-color: red;
+        }
+        .class1{
+            background-color: blue;
+        }
+        #box1{
+            background-color: yellow !important;
+        }
+        div#box1{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<div id="box1" class="class1">
+    This is a division.
+</div>
+</body>
+</html>

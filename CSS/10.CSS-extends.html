@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS extends</title>
+    <style>
+        /*
+            样式的继承：为一个元素设置的样式同样会应用到它的后代上
+            1. 除了一些特殊的属性，
+                如：border, padding, margin, width, height, background, color
+                其他的属性都会被继承
+            2. 一些特殊的属性，如：color, font-size, font-family
+                会被继承，但是会被后代元素的样式覆盖
+        */
+        p{
+            color: cadetblue;
+            background: orange;
+        }
+        div{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<p>
+    This is a paragraph.
+    <span>
+        This is a span in paragraph.
+    </span>
+</p>
+<span>
+    This is a span outside paragraph.
+</span>
+<br><br>
+
+<div>
+    This is a division.
+    <span>
+        This is a span in division.
+        <em>
+            This is a em in span in division.
+        </em>
+    </span>
+</div>
+</body>
+</html>

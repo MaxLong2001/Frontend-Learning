@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS pseudo hyperlink</title>
+    <style>
+        /*
+            伪类用于描述一个元素的特殊状态
+            :link    未被访问的链接
+            :visited 已被访问的链接
+                只能修改颜色
+            :hover   鼠标悬停在元素上
+            :active  鼠标点击元素
+        */
+        a:link{
+            color: red;
+        }
+        a:visited{
+            color: blue;
+        }
+        a:hover{
+            color: yellowgreen;
+            font-size: 30px;
+        }
+        a:active{
+            color: blueviolet;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+<a href="https://www.baidu.com">Baidu(visited)</a>
+<br>
+<a href="https://www.qq.com">Tencent(unvisited)</a>
+</body>
+</html>

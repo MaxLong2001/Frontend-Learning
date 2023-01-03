@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS-relation selector</title>
+    <style>
+        div > span{
+            color: red;
+        }
+        div span{
+            color: blue;
+        }
+        div > p > span{
+            font-size: 30px;
+        }
+        /* 选择下一个兄弟元素 */
+        p + span{
+            color: green;
+        }
+        /* 选择所有的兄弟元素 */
+        p ~ span{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+<div>
+    This is a division.
+
+    <span>
+        This is a span in division before paragraph.
+    </span>
+    <p>
+        This is a paragraph in division.
+        <span>
+            This is a span in paragraph.
+        </span>
+    </p>
+    <span>
+        This is a span in division after paragraph.
+    </span>
+    <span>
+        This is another span in division after paragraph.
+    </span>
+</div>
+
+<span>
+    This is a span outside division.
+</span>
+</body>
+</html>
