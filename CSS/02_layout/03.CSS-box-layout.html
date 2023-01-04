@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS box layout</title>
+    <style>
+        .outer{
+            width: 800px;
+            height: 300px;
+            border: 10px red solid;
+
+            overflow: auto;
+        }
+
+        .inner{
+            width: 300px;
+            height:500px;
+            background-color: #bbffaa;
+            /* 子元素自动居中 */
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+<!--    This is the outer division.-->
+    <div class="inner">
+<!--        This is the inner division.-->
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ducimus, eaque, earum, enim fugiat id iusto libero maiores molestias nemo neque nobis officiis quae quas qui saepe velit! Cum, modi.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, alias cum doloremque, dolores eius exercitationem ipsam molestias mollitia nesciunt omnis pariatur perspiciatis reiciendis saepe tempora temporibus ut, vero voluptatibus! Optio!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, asperiores, aspernatur assumenda atque aut dignissimos doloremque esse eum labore nisi officiis porro! Deleniti, dolore eum molestias necessitatibus quaerat sequi voluptate.
+    </div>
+</div>
+</body>
+</html>
