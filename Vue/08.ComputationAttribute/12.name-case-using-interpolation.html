@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Name Case Using Interpolation</title>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+	<label>
+		First Name:
+		<input type="text" v-model="firstName">
+	</label>
+	<br>
+	<label>
+		Last Name:
+		<input type="text" v-model="lastName">
+	</label>
+	<br>
+	Full Name: <span>{{firstName.slice(0, 3)}}-{{lastName}}</span>
+</div>
+</body>
+
+<script type="text/javascript">
+	Vue.config.productionTip = false;
+
+	new Vue({
+		el: '#root',
+		data: {
+			firstName: "Max",
+			lastName: "Long"
+		}
+	})
+</script>
+</html>

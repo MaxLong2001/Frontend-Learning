@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Keyboard Event</title>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+	<h2>Welcome to {{name}}</h2>
+	<input type="text" placeholder="Click enter to input" @keyup.enter="showInfo">
+</div>
+</body>
+
+<script type="text/javascript">
+	Vue.config.productionTip = false;
+
+	new Vue({
+		el: '#root',
+		data: {
+			name: 'BUAA'
+		},
+		methods: {
+			showInfo(e) {
+				// if (e.keyCode !== 13) return;
+				console.log(e.target.value);
+			}
+		}
+	})
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Name Case Using Methods</title>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+	<label>
+		First Name:
+		<input type="text" v-model="firstName">
+	</label>
+	<br>
+	<label>
+		Last Name:
+		<input type="text" v-model="lastName">
+	</label>
+	<br>
+	Full Name: <span>{{fullName()}}</span>
+</div>
+</body>
+
+<script type="text/javascript">
+	Vue.config.productionTip = false;
+
+	new Vue({
+		el: '#root',
+		data: {
+			firstName: "Max",
+			lastName: "Long"
+		},
+		methods: {
+			fullName() {
+				return this.firstName + '-' + this.lastName;
+			}
+		}
+	})
+</script>
+</html>
