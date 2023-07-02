@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Conditional Rendering</title>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+<!--	<h2 v-show="visible">Hello {{name}}!</h2>-->
+<!--	<h2 v-if="visible">Hello {{name}}!</h2>-->
+
+	<h2>Current value of n is {{n}}</h2>
+	<button @click="n++">Click me to add 1 to n</button>
+	<hr/>
+
+	<div v-show="n === 1">Angular</div>
+	<div v-show="n === 2">React</div>
+	<div v-show="n === 3">Vue</div>
+	<hr/>
+
+	<template v-if="n === 1">
+		<h2>Angular</h2>
+		<h2>React</h2>
+		<h2>Vue</h2>
+	</template>
+</div>
+</body>
+
+<script type="text/javascript">
+	Vue.config.productionTip = false;
+
+	new Vue({
+		el: '#root',
+		data: {
+			name: 'Vue',
+			visible: true,
+			n: 0
+		}
+	});
+</script>
+</html>

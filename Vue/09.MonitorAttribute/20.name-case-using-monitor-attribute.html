@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Name Case Using Monitor Attribute</title>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+	<label>
+		First Name:
+		<input type="text" v-model="firstName">
+	</label>
+	<br>
+	<label>
+		Last Name:
+		<input type="text" v-model="lastName">
+	</label>
+	<br>
+	Full Name: <span>{{fullName}}</span>
+</div>
+</body>
+
+<script type="text/javascript">
+	Vue.config.productionTip = false;
+
+	const vm = new Vue({
+		el: '#root',
+		data: {
+			firstName: "Max",
+			lastName: "Long",
+			fullName: "Max-Long"
+		},
+		watch: {
+			firstName(newValue) {
+				this.fullName = newValue + "-" + this.lastName;
+			},
+			lastName(newValue) {
+				this.fullName = this.firstName + "-" + newValue;
+			}
+		}
+	})
+</script>
+</html>

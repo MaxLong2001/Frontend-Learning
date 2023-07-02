@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Style Binding</title>
+	<script type="text/javascript" src="../js/vue.js"></script>
+	<style>
+		.basic {
+			width: 400px;
+			height: 400px;
+			border: 1px solid black;
+		}
+
+		.happy {
+			background-color: #f00;
+		}
+
+		.sad {
+			background-color: #00f;
+		}
+
+		.normal {
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+<div id="root">
+	<div class="basic" :class="mood" @click="changeMood">{{name}}</div>
+	<hr/>
+	<div class="basic" :class="arr">{{name}}</div>
+	<hr/>
+	<div class="basic" :style="{fontSize: fsize+'px'}">{{name}}</div>
+</div>
+</body>
+
+<script type="text/javascript">
+	Vue.config.productionTip = false;
+
+	new Vue({
+		el: '#root',
+		data: {
+			name: 'Vue',
+			mood: 'normal',
+			arr: ['happy', 'sad', 'normal'],
+			fsize: 40
+		},
+		methods: {
+			changeMood() {
+				// switch (this.mood) {
+				// 	case 'normal':
+				// 		this.mood = 'happy';
+				// 		break;
+				// 	case 'happy':
+				// 		this.mood = 'sad';
+				// 		break;
+				// 	case 'sad':
+				// 		this.mood = 'normal';
+				// 		break;
+				// }
+				const arr = ['normal', 'happy', 'sad'];
+				this.mood = arr[Math.floor(Math.random() * 3)];
+				console.log(this.mood)
+			}
+		}
+	})
+</script>
+</html>
