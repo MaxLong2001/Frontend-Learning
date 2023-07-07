@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.set</title>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+	<h2>Name: {{name}}</h2>
+	<h2>Address: {{address}}</h2>
+	<hr/>
+
+	<h2>Student name: {{student.name}}</h2>
+	<h2>Student age: Real-{{student.age.real}}, Virtual-{{student.age.virtual}}</h2>
+	<h2 v-if="student.sex">Student sex: {{student.sex}}</h2>
+	<button @click="addSex">Click me to add sex</button>
+	<ul>
+		<li v-for="(f, index) in student.friends" :key="index">
+			{{f.name}}-{{f.age}}
+		</li>
+	</ul>
+</div>
+</body>
+
+<script type="text/javascript">
+	Vue.config.productionTip = false;
+
+	const vm = new Vue({
+		el: '#root',
+		data: {
+			name: 'Tsinghua University',
+			address: 'Qinghua Yuan, Haidian District, Beijing',
+			student: {
+				name: 'Max',
+				age: {
+					real: 18,
+					virtual: 20
+				},
+				friends: [
+					{name: 'Diana', age: 18},
+					{name: 'Stephanie', age: 20}
+				]
+			}
+		},
+		methods: {
+			addSex() {
+				Vue.set(this.student, 'sex', 'male')
+			}
+		}
+	})
+</script>
+</html>

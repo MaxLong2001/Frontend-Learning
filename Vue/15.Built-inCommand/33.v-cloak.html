@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>v-cloak</title>
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+	<p v-cloak>{{name}}</p>
+</div>
+</body>
+
+<script type="text/javascript">
+	Vue.config.productionTip = false;
+
+	setTimeout(() => {
+		new Vue({
+			el: '#root',
+			data: {
+				name: 'Tsinghua University',
+			}
+		})
+	}, 5000)
+</script>
+</html>

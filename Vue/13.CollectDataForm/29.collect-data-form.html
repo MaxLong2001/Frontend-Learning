@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Collect Data Form</title>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+	<form @submit.prevent="submitForm">
+		<label>
+			Account:
+			<input type="text" v-model.trim="userInfo.account">
+		</label>
+		<br/><br/>
+
+		<label>
+			Password:
+			<input type="password" v-model="userInfo.password">
+		</label>
+		<br/><br/>
+
+		<label>
+			Age:
+			<input type="number" v-model.number="userInfo.age">
+		</label>
+		<br/><br/>
+
+		<label>
+			Sex:
+			Male
+			<input type="radio" name="sex-radio" value="male" v-model="userInfo.sex">
+			Female
+			<input type="radio" name="sex-radio" value="female" v-model="userInfo.sex">
+		</label>
+		<br/><br/>
+
+		<label>
+			Hobby:
+			Study<input type="checkbox" name="hobby-checkbox" value="study" v-model="userInfo.hobby">
+			Games<input type="checkbox" name="hobby-checkbox" value="games" v-model="userInfo.hobby">
+			Sport<input type="checkbox" name="hobby-checkbox" value="sport" v-model="userInfo.hobby">
+		</label>
+		<br/><br/>
+
+		<label>
+			Campus:
+			<select v-model="userInfo.campus">
+				<option value="">Please select a campus</option>
+				<option value="beijing">Beijing</option>
+				<option value="shanghai">Shanghai</option>
+				<option value="shenzhen">Shenzhen</option>
+				<option value="guangzhou">Guangzhou</option>
+			</select>
+		</label>
+		<br/><br/>
+
+		<label>
+			Other information:
+			<textarea v-model.lazy="userInfo.otherInformation"></textarea>
+		</label>
+		<br/><br/>
+
+		<label>
+			<input type="checkbox" v-model="userInfo.agree">
+			Read more:
+			<a href="https://buaa.edu.cn">BUAA</a>
+		</label>
+		<br/><br/>
+
+		<button>Submit</button>
+	</form>
+</div>
+</body>
+
+<script type="text/javascript">
+	Vue.config.productionTip = false;
+
+	new Vue({
+		el: '#root',
+		data: {
+			userInfo: {
+				account: '',
+				password: '',
+				age: '',
+				sex: 'male',
+				hobby: [],
+				campus: '',
+				otherInformation: '',
+				agree: false
+			}
+		},
+		methods: {
+			submitForm() {
+				// alert('submit form')
+				console.log(JSON.stringify(this.userInfo))
+			}
+		}
+	})
+
+</script>
+</html>
