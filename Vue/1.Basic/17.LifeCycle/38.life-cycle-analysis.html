@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Life Cycle Analysis</title>
+	<script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+	<h2>n: {{n}}</h2>
+	<button @click="add">Click me to add 1</button>
+</div>
+</body>
+
+<script type="text/javascript">
+	Vue.config.productionTip = false;
+
+	new Vue({
+		el: '#root',
+		data: {
+			n: 1,
+		},
+		methods: {
+			add() {
+				this.n += 1
+			}
+		}
+	})
+</script>
+</html>

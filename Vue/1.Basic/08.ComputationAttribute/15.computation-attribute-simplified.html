@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Computation Attribute Simplified</title>
+	<script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+	<label>
+		First Name:
+		<input type="text" v-model="firstName">
+	</label>
+	<br>
+	<label>
+		Last Name:
+		<input type="text" v-model="lastName">
+	</label>
+	<br>
+	Full Name: <span>{{fullName}}</span>
+</div>
+</body>
+
+<script type="text/javascript">
+	Vue.config.productionTip = false;
+
+	const vm = new Vue({
+		el: '#root',
+		data: {
+			firstName: "Max",
+			lastName: "Long"
+		},
+		computed: {
+			// fullName: {
+			// 	get() {
+			// 		console.log("computed get")
+			// 		return this.firstName + '-' + this.lastName;
+			// 	},
+			// 	set(value) {
+			// 		console.log("computed set", value)
+			// 		const names = value.split('-');
+			// 		this.firstName = names[0];
+			// 		this.lastName = names[1];
+			// 	}
+			// }
+
+			// The above code can be simplified as below:
+			fullName() {
+				console.log("simplified computed")
+				return this.firstName + '-' + this.lastName;
+			}
+		}
+	})
+</script>
+</html>

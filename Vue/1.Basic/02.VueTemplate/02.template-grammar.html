@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Template Grammar</title>
+	<script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+<div id="root1">
+	<h1>Interpolation</h1>
+	<h3>Hello {{name}}</h3>
+	<hr/>
+	<h1>Command</h1>
+	<a v-bind:href="url">Click me to BUAA version1</a>
+	<a :href="url">Click me to BUAA version2</a>
+</div>
+</body>
+
+<script type="text/javascript">
+	Vue.config.productionTip = false
+
+	new Vue({
+		el: '#root1',
+		data: {
+			name: 'Vue',
+			url: 'https://buaa.edu.cn'
+		}
+	})
+</script>
+</html>

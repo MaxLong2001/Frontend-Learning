@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Life Cycle</title>
+	<script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+	<h2 :style="{opacity}">Welcome to Beijing</h2>
+</div>
+</body>
+
+<script type="text/javascript">
+	Vue.config.productionTip = false;
+
+	const vm = new Vue({
+		el: '#root',
+		data: {
+			opacity: 1
+		},
+		mounted() {
+			setInterval(() => {
+				this.opacity -= 0.01
+				if (this.opacity <= 0) {
+					this.opacity = 1
+				}
+			}, 16)
+		},
+	})
+
+	// setInterval(() => {
+	// 	vm.opacity -= 0.01
+	// 	if (vm.opacity <= 0) {
+	// 		vm.opacity = 1
+	// 	}
+	// }, 16)
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Data Proxy</title>
+	<script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	let obj_1 = {x: 100}
+	let obj_2 = {y: 200}
+
+	Object.defineProperty(obj_2, 'x', {
+		get() {
+			return obj_1.x
+		},
+		set(value) {
+			obj_1.x = value
+		}
+	})
+</script>
+</body>
+</html>
