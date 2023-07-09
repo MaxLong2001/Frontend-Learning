@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Built-in Relationships</title>
+	<script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+	<school></school>
+</div>
+</body>
+
+<script type="text/javascript">
+	Vue.config.productionTip = false;
+	Vue.prototype.x = 99
+
+	const school = Vue.extend({
+		name: 'school',
+		template: `
+			<div>
+				<h2>School Name: {{name}}</h2>
+				<h2>School Address: {{address}}</h2>
+			<button @click="showX">Click me to show x</button>
+			</div>
+		`,
+		data() {
+			return {
+				name: 'Harvard University',
+				address: 'Cambridge, Massachusetts, United States'
+			}
+		},
+		methods: {
+			showX() {
+				alert(this.x)
+			}
+		}
+	})
+
+	const vm = new Vue({
+		el: '#root',
+		components: {
+			school,
+		}
+	})
+</script>
+</html>

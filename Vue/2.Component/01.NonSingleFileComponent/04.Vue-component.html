@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue Component</title>
+	<script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+	<school></school>
+</div>
+</body>
+
+<script type="text/javascript">
+	Vue.config.productionTip = false;
+
+	const school = Vue.extend({
+		name: 'school',
+		template: `
+			<div>
+				<h2>School Name: {{name}}</h2>
+				<h2>School Address: {{address}}</h2>
+				<button @click="showName">Show Name</button>
+			</div>
+		`,
+		data() {
+			return {
+				name: 'Harvard University',
+				address: 'Cambridge, Massachusetts, United States'
+			}
+		},
+		methods: {
+			showName() {
+				alert(this.name)
+				console.log(this)
+			}
+		}
+	})
+
+	const vm = new Vue({
+		el: '#root',
+		components: {
+			school,
+		}
+	})
+
+	console.log(school)
+	console.log(vm)
+</script>
+</html>

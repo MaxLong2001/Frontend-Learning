@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Some Key Points</title>
+	<script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+	<school></school>
+</div>
+</body>
+
+<script type="text/javascript">
+	Vue.config.productionTip = false;
+
+	const school = Vue.extend({
+		name: 'school',
+		template: `
+			<div>
+				<h2>School Name: {{name}}</h2>
+				<h2>School Address: {{address}}</h2>
+			</div>
+		`,
+		data() {
+			return {
+				name: 'Harvard University',
+				address: 'Cambridge, Massachusetts, United States'
+			}
+		}
+	})
+
+	new Vue({
+		el: '#root',
+		components: {
+			school,
+		}
+	})
+</script>
+</html>
