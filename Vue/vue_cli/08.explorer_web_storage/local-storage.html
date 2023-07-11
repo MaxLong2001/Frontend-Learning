@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Local Storage</title>
+</head>
+<body>
+<button onclick="saveData()">Save</button>
+<button onclick="readData()">Read</button>
+<button onclick="deleteData()">Delete</button>
+<button onclick="clearData()">Clear</button>
+</body>
+
+<script type="text/javascript">
+	const person = {
+		name: 'John',
+		age: 20
+	};
+
+	function saveData() {
+		localStorage.setItem('person', JSON.stringify(person));
+	}
+
+	function readData() {
+		const data = JSON.parse(localStorage.getItem('person'));
+		console.log(data);
+	}
+
+	function deleteData() {
+		localStorage.removeItem('person');
+	}
+
+	function clearData() {
+		localStorage.clear();
+	}
+</script>
+</html>
