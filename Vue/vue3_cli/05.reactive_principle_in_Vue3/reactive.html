@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Reactive Principle in Vue3</title>
+</head>
+<body>
+<script type="text/javascript">
+	let person = {
+		name: 'Max',
+		age: 27,
+	}
+
+	// let p = {}
+	// Object.defineProperty(p, 'name', {
+	// 	configurable: true,
+	// 	get() {
+	// 		console.log('get name')
+	// 		return person.name
+	// 	},
+	// 	set(newVal) {
+	// 		console.log('set name')
+	// 		person.name = newVal
+	// 	}
+	// })
+	// Object.defineProperty(p, 'age', {
+	// 	get() {
+	// 		console.log('get age')
+	// 		return person.age
+	// 	},
+	// 	set(newVal) {
+	// 		console.log('set age')
+	// 		person.age = newVal
+	// 	}
+	// })
+
+	// const p = new Proxy(person, {
+	// 	get(target, key) {
+	// 		console.log('get', key)
+	// 		return target[key]
+	// 	},
+	// 	set(target, key, newVal) {
+	// 		console.log('set', key)
+	// 		return target[key] = newVal
+	// 	},
+	// 	deleteProperty(target, p) {
+	// 		console.log('delete', p)
+	// 		return delete target[p]
+	// 	}
+	// })
+
+	let obj = {
+		a: 1,
+		b: 2
+	}
+	const x1 = Reflect.defineProperty(obj, 'c', {
+		value: 3
+	})
+	console.log(x1)
+	const x2 = Reflect.defineProperty(obj, 'c', {
+		value: 4
+	})
+	console.log(x2)
+
+	const p = new Proxy(person, {
+		get(target, key) {
+			console.log('get', key)
+			return Reflect.get(target, key)
+		},
+		set(target, key, newVal) {
+			console.log('set', key)
+			return Reflect.set(target, key, newVal)
+		},
+		deleteProperty(target, p) {
+			console.log('delete', p)
+			return Reflect.deleteProperty(target, p)
+		}
+	})
+</script>
+</body>
+</html>
